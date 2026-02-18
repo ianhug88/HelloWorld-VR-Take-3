@@ -11,6 +11,8 @@ public class HeadFollower : MonoBehaviour
     void FixedUpdate()
     {
         InputDevice headDevice = InputDevices.GetDeviceAtXRNode(XRNode.Head);
+        PlayerJoystickMover rb = GetComponent<PlayerJoystickMover>();
+        rb.enabled = false;
 
         if (headDevice.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 headPos))
         {
@@ -25,5 +27,10 @@ public class HeadFollower : MonoBehaviour
                 desiredVelocity.z
             );
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //collision.rigidbody.gameObject.GetComponent<Ragdoller>()
     }
 }
