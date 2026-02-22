@@ -5,18 +5,22 @@ public class MovingBridge : MonoBehaviour{
     private Transform player;
 
 
-    private void BeginningBridge(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<OVRPlayerController>())
+        OVRPlayerController controller = other.GetComponentInParent<OVRPlayerController>();
+
+        if (controller != null)
         {
-            player = other.transform;
+            player = controller.transform;
             player.SetParent(transform);
         }
     }
 
-    private void EndBridge(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<OVRPlayerController>())
+        OVRPlayerController controller = other.GetComponentInParent<OVRPlayerController>();
+
+        if (controller != null && player != null)
         {
             player.SetParent(null);
             player = null;
