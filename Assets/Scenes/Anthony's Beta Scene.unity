@@ -388,6 +388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpinningCylinder (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2722256463779436331, guid: 0cd46a8232452bc408aea86d0a1d0c26, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4461987111777531506, guid: 0cd46a8232452bc408aea86d0a1d0c26, type: 3}
       propertyPath: m_Enabled
       value: 0
