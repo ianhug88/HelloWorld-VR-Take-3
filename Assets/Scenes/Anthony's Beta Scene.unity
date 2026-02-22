@@ -388,6 +388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpinningCylinder (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4461987111777531506, guid: 0cd46a8232452bc408aea86d0a1d0c26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8075231678369672599, guid: 0cd46a8232452bc408aea86d0a1d0c26, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.71
@@ -431,7 +435,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2722256463779436331, guid: 0cd46a8232452bc408aea86d0a1d0c26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1594599143}
+    - targetCorrespondingSourceObject: {fileID: 2722256463779436331, guid: 0cd46a8232452bc408aea86d0a1d0c26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1594599142}
   m_SourcePrefab: {fileID: 100100000, guid: 0cd46a8232452bc408aea86d0a1d0c26, type: 3}
 --- !u!1 &234482745
 GameObject:
@@ -3130,6 +3140,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: c943ee3841fcbd94d9630c5e4529b603, type: 3}
   m_PrefabInstance: {fileID: 1607427516}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1594599136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2722256463779436331, guid: 0cd46a8232452bc408aea86d0a1d0c26, type: 3}
+  m_PrefabInstance: {fileID: 144722865}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1594599142
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594599136}
+  serializedVersion: 5
+  m_Mass: 50
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 110
+  m_CollisionDetection: 0
+--- !u!114 &1594599143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594599136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6914cf69bde6de48b3a57ca7fd64ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::spinTest2
+  spinSpeed: 1
 --- !u!1 &1596239416
 GameObject:
   m_ObjectHideFlags: 0
