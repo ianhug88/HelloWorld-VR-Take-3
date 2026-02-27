@@ -26,13 +26,25 @@ public class bodyFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+
         if (!physicsEnabled)
         {
             //// sets the transform of the playerBody to the position of the main camera
             //rb.MovePosition(cameraTransform.position);
 
-            Vector3 targetPosition = cameraTransform.position - cameraOffset;
-            rb.MovePosition(targetPosition);
+
+            // MY CODE THAT WORKS BUT FREEZES PLAYER AT APEX OF JUMP
+            //Vector3 targetPosition = cameraTransform.position - cameraOffset;
+            //rb.MovePosition(targetPosition);
+
+
+            // CODE FROM CHAT GPT THAT SUPPOSEDLY WILL FIX THIS BY KEEPING THE Y VALUE SEPARATE
+            Vector3 target = cameraTransform.position;
+            Vector3 current = rb.position;
+
+            Vector3 newPos = new Vector3(target.x, current.y, target.z);
+            rb.MovePosition(newPos);
         }
 
     }
