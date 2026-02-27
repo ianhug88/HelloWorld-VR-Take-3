@@ -35,16 +35,16 @@ public class bodyFollow : MonoBehaviour
 
 
             // MY CODE THAT WORKS BUT FREEZES PLAYER AT APEX OF JUMP
-            //Vector3 targetPosition = cameraTransform.position - cameraOffset;
-            //rb.MovePosition(targetPosition);
+            Vector3 targetPosition = cameraTransform.position - cameraOffset;
+            rb.MovePosition(targetPosition);
 
 
             // CODE FROM CHAT GPT THAT SUPPOSEDLY WILL FIX THIS BY KEEPING THE Y VALUE SEPARATE
-            Vector3 target = cameraTransform.position;
-            Vector3 current = rb.position;
+            //Vector3 target = cameraTransform.position;
+            //Vector3 current = rb.position;
 
-            Vector3 newPos = new Vector3(target.x, current.y, target.z);
-            rb.MovePosition(newPos);
+            //Vector3 newPos = new Vector3(target.x, current.y, target.z);
+            //rb.MovePosition(newPos);
         }
 
     }
@@ -60,7 +60,7 @@ public class bodyFollow : MonoBehaviour
     public void enableRbPhysics()
     {
         physicsEnabled = true;
-        rb.isKinematic = false;
+        //rb.isKinematic = false;
         rb.useGravity = true;
         rb.constraints = RigidbodyConstraints.None;
     }
@@ -68,7 +68,7 @@ public class bodyFollow : MonoBehaviour
     public void disableRbPhysics()
     {
         physicsEnabled = false;
-        rb.isKinematic = true;
+        //rb.isKinematic = true;
         rb.useGravity = false;
         rb.constraints = 
             RigidbodyConstraints.FreezeRotationY |
