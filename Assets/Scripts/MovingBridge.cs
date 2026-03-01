@@ -1,41 +1,20 @@
 using UnityEngine;
 
-public class MovingBridge : MonoBehaviour{
-
-    private Transform player;
-
-
-    private void OnTriggerEnter(Collider other)
+public class BridgeCarry : MonoBehaviour
+{
+    private void OnTriggerEnter(Collider other) //when something (player) enters the collider
     {
-        OVRPlayerController controller = other.GetComponentInParent<OVRPlayerController>();
-
-        if (controller != null)
+        if (other.CompareTag("Player")) //if the other (player), enters the bridge, it'll activate the trigger and check if it's the player
         {
-            player = controller.transform;
-            player.SetParent(transform);
+            other.transform.SetParent(transform); // we make the bridge the parent of the player
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other) //when the player "leaves" the collider
     {
-        OVRPlayerController controller = other.GetComponentInParent<OVRPlayerController>();
-
-        if (controller != null && player != null)
+        if (other.CompareTag("Player")) //we check if it's the player 
         {
-            player.SetParent(null);
-            player = null;
+            other.transform.SetParent(null); //We unset the bridge as the parent
         }
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
