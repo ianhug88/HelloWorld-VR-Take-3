@@ -964,6 +964,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f022d984d36e9c4caf142100d29d6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enableFall
+  buttonAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 8aaaa0e0-3962-4721-a994-35ca07bc8c86
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 909688293}
+  mesh: {fileID: 360675332}
   trackedPoseDriver: {fileID: 121542492}
   cameraTransform: {fileID: 441810867}
   moveProvider: {fileID: 1955237055}
@@ -977,7 +990,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862444932}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bb560f2e173b3e4db3af51d8c031953, type: 3}
   m_Name: 
@@ -1003,6 +1016,20 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 665905918}
   mesh: {fileID: 1898011109}
+--- !u!114 &909688293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: XRI Left Interaction/customButton
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_ActionId: ff87d553-8cd4-4f11-90e2-2d6b9728acd4
 --- !u!114 &946260072 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1748222016861356527, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -2632,6 +2659,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f022d984d36e9c4caf142100d29d6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enableFall
+  buttonAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 12657a93-a57f-4221-a966-ff0106ce82d1
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  mesh: {fileID: 0}
   trackedPoseDriver: {fileID: 0}
   cameraTransform: {fileID: 1868551086}
   moveProvider: {fileID: 1868551088}

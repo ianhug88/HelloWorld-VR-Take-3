@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Jump;
 //using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
@@ -22,6 +23,9 @@ public class enableFall : MonoBehaviour
     ///////////////////// 
     //CHAT GPT CODE
 
+    public InputActionProperty buttonAction;
+    public MeshRenderer mesh;
+
     public TrackedPoseDriver trackedPoseDriver;
 
     public Transform cameraTransform;
@@ -32,31 +36,54 @@ public class enableFall : MonoBehaviour
     public JumpProvider jumpProvider;
     ///////////////////// 
 
+
+
+
+
+    private void OnEnable()
+    {
+        buttonAction.action.Enable();
+
+        buttonAction.action.started += OnButtonPressed;
+        buttonAction.action.canceled += OnButtonReleased;
+    }
+
+    private void OnDisable()
+    {
+        buttonAction.action.started -= OnButtonPressed;
+        buttonAction.action.canceled -= OnButtonReleased;
+
+        buttonAction.action.Disable();
+    }
+    private void OnButtonPressed(InputAction.CallbackContext context)
+    {
+        ButtonWasPressed();
+    }
+
+    private void OnButtonReleased(InputAction.CallbackContext context)
+    {
+        ButtonWasReleased();
+    }
+    private void ButtonWasPressed()
+    {
+        Debug.Log("Button Was Pressed");
+
+        mesh.enabled = false;
+        resetPlayer();
+    }
+
+    private void ButtonWasReleased()
+    {
+        Debug.Log("Button Was Released");
+
+        mesh.enabled = true;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
         rb = GetComponent<Rigidbody>();
-
-
-
     }
-
-    //// Update is called once per frame
-    //void LateUpdate()
-    //{
-
-    //    /////////////////// 
-    //    //CHAT GPT CODE
-    //    if (fallEnabled)
-    //    {
-    //        Vector3 localPos = cameraTransform.localPosition;
-    //        cameraTransform.localPosition = new Vector3(0, localPos.y, 0);
-    //    }
-    //    /////////////////// 
-
-    //}
-
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -70,11 +97,6 @@ public class enableFall : MonoBehaviour
     {
 
         fallEnabled = true;
-
-        /////////////////// 
-        //CHAT GPT CODE
-        //if (trackedPoseDriver)
-        //    trackedPoseDriver.enabled = false;
 
         trackedPoseDriver.trackingType =
     TrackedPoseDriver.TrackingType.RotationOnly;
@@ -97,9 +119,40 @@ public class enableFall : MonoBehaviour
         if (teleportationProvider) teleportationProvider.enabled = false;
         if (jumpProvider) jumpProvider.enabled = false;
         /////////////////////
+    }
+    private void resetPlayer()
+    {
+        fallEnabled = false;
 
+        // Stop all physics motion
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        // Stand upright (preserve Y rotation so facing direction stays same)
+        Vector3 currentEuler = transform.eulerAngles;
+        transform.rotation = Quaternion.Euler(0f, currentEuler.y, 0f);
+
+        // Re-enable constraints (lock rotation)
+        rb.constraints =
+            RigidbodyConstraints.FreezeRotationX |
+            RigidbodyConstraints.FreezeRotationY |
+            RigidbodyConstraints.FreezeRotationZ;
+
+        // Restore full headset tracking
+        if (trackedPoseDriver)
+        {
+            trackedPoseDriver.trackingType =
+                TrackedPoseDriver.TrackingType.RotationAndPosition;
+        }
+
+        // Re-enable locomotion providers
+        if (moveProvider) moveProvider.enabled = true;
+        if (snapTurnProvider) snapTurnProvider.enabled = true;
+        if (teleportationProvider) teleportationProvider.enabled = true;
+        if (jumpProvider) jumpProvider.enabled = true;
 
     }
+
 
     public void disableRbFall()
     {
