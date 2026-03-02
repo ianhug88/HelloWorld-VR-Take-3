@@ -28,6 +28,8 @@ public class enableFall : MonoBehaviour
 
     public TrackedPoseDriver trackedPoseDriver;
 
+    private float defaultMaxAngularVelocity;
+
     public Transform cameraTransform;
 
     public ContinuousMoveProvider moveProvider;
@@ -83,6 +85,9 @@ public class enableFall : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        defaultMaxAngularVelocity = rb.maxAngularVelocity;
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -97,6 +102,9 @@ public class enableFall : MonoBehaviour
     {
 
         fallEnabled = true;
+
+        rb.isKinematic = false;
+        rb.useGravity = true;
 
         trackedPoseDriver.trackingType =
     TrackedPoseDriver.TrackingType.RotationOnly;
@@ -128,9 +136,16 @@ public class enableFall : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
 
+        //rb.isKinematic = true;
+        //rb.useGravity = false;
+
         // Stand upright (preserve Y rotation so facing direction stays same)
         Vector3 currentEuler = transform.eulerAngles;
         transform.rotation = Quaternion.Euler(0f, currentEuler.y, 0f);
+
+        rb.interpolation = RigidbodyInterpolation.None;
+        rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
+        rb.maxAngularVelocity = defaultMaxAngularVelocity;
 
         // Re-enable constraints (lock rotation)
         rb.constraints =
@@ -153,34 +168,6 @@ public class enableFall : MonoBehaviour
 
     }
 
-
-    public void disableRbFall()
-    {
-
-        /////////////////// 
-        //CHAT GPT CODE
-        if (trackedPoseDriver)
-            trackedPoseDriver.enabled = true;
-
-
-        fallEnabled = false;
-        //rb.isKinematic = true;
-        //rb.useGravity = false;
-        rb.constraints =
-            RigidbodyConstraints.FreezeRotationY |
-            RigidbodyConstraints.FreezeRotationX |
-            RigidbodyConstraints.FreezeRotationZ;
-
-        ///////////////////// 
-        //CHAT GPT CODE
-        // disable movement providers to make the player inert
-        if (moveProvider) moveProvider.enabled = true;
-        if (snapTurnProvider) snapTurnProvider.enabled = true;
-        if (teleportationProvider) teleportationProvider.enabled = true;
-        if (jumpProvider) jumpProvider.enabled = true;
-        /////////////////////
-
-    }
 
 
 }

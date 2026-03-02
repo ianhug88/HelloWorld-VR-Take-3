@@ -983,7 +983,7 @@
                     "id": "ff87d553-8cd4-4f11-90e2-2d6b9728acd4",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Hold(duration=2)",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
