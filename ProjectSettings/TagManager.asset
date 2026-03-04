@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - ridigbodyTrigger
+  - bottomReset
   layers:
   - Default
   - TransparentFX

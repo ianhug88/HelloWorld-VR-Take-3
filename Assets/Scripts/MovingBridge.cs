@@ -4,6 +4,7 @@ public class BridgeCarry : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) //when something (player) enters the collider
     {
+        Debug.Log("Triggering");
         if (other.CompareTag("Player")) //if the other (player), enters the bridge, it'll activate the trigger and check if it's the player
         {
             other.transform.SetParent(transform); // we make the bridge the parent of the player

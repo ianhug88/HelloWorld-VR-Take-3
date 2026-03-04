@@ -18,6 +18,8 @@ public class enableFall : MonoBehaviour
 
     private bool fallEnabled = false;
 
+    //public Transform XR_Rig;
+
 
 
     ///////////////////// 
@@ -169,5 +171,18 @@ public class enableFall : MonoBehaviour
     }
 
 
+    //private void OnCollisionWithFloor(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "bottomReset")
+    //    {
+    //        reOriginPlayer();
+    //    }
+    //}
+
+    //private void reOriginPlayer()
+    //{
+    //    XR_Rig.position = new Vector3(0, 0, 0);
+    //    XR_Rig.rotation = Quaternion.Euler(0, 0, 0);
+    //}
 
 }
