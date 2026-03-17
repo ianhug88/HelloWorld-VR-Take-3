@@ -5,6 +5,7 @@ public class GateScript : MonoBehaviour
 {
     public float speed = 2.0f; //the speed we want the object to move
     public float distance = 3f; //the distance we wnat it to travel from 
+    public float rotateSpeed = 90f; 
     private Vector3 startPos; //the starting position
     private bool startDown = false;
 
@@ -25,5 +26,6 @@ public class GateScript : MonoBehaviour
         }
 
         transform.position = startPos + new Vector3(0, movement, 0); //update the position of the transfrom by adding the current position and moving the y axis
+        transform.Rotate(Vector3.right, rotateSpeed * Time.deltaTime);
     }
 }

@@ -23,9 +23,4 @@ public class spinTest2 : MonoBehaviour
         rb.angularVelocity = new Vector3(0, spinSpeed, 0);
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    transform.Rotate(axisRotating * speed * Time.deltaTime); //rotate the x axis times the speed times the fps. 
-    //}
 }
