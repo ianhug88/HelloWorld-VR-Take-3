@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Gravity;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Jump;
@@ -38,6 +39,7 @@ public class enableFall : MonoBehaviour
     public SnapTurnProvider snapTurnProvider;
     public TeleportationProvider teleportationProvider;
     public JumpProvider jumpProvider;
+    public GravityProvider gravityProvider;
     ///////////////////// 
 
 
@@ -128,6 +130,7 @@ public class enableFall : MonoBehaviour
         if (snapTurnProvider) snapTurnProvider.enabled = false;
         if (teleportationProvider) teleportationProvider.enabled = false;
         if (jumpProvider) jumpProvider.enabled = false;
+        if (gravityProvider) gravityProvider.enabled = false;
         /////////////////////
     }
     private void resetPlayer()
@@ -167,6 +170,7 @@ public class enableFall : MonoBehaviour
         if (snapTurnProvider) snapTurnProvider.enabled = true;
         if (teleportationProvider) teleportationProvider.enabled = true;
         if (jumpProvider) jumpProvider.enabled = true;
+        if (gravityProvider) gravityProvider.enabled = true;
 
     }
 
