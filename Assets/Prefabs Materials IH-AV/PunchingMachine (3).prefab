@@ -127,9 +127,10 @@ GameObject:
   - component: {fileID: 690079624326091055}
   - component: {fileID: 5372046790887243249}
   - component: {fileID: 1956091102915148892}
+  - component: {fileID: 2497554263213821246}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 6303875518580058268}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.029000167, y: -1.9728565, z: -0.013999939}
+  m_LocalPosition: {x: 0.03, y: -1.98, z: -0.013999939}
   m_LocalScale: {x: 1.4285711, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -242,6 +243,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   speed: 8
   distance: 1.3
+--- !u!54 &2497554263213821246
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6303875518580058268}
+  serializedVersion: 5
+  m_Mass: 40
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
 --- !u!1 &6456819114807622614
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +283,7 @@ GameObject:
   - component: {fileID: 4973118317233591341}
   - component: {fileID: 3407801051202214371}
   m_Layer: 0
-  m_Name: PunchingMachine
+  m_Name: PunchingMachine (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +298,7 @@ Transform:
   m_GameObject: {fileID: 6456819114807622614}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -14.71, y: 4.2, z: 84.254}
+  m_LocalPosition: {x: 0.09, y: 4.342471, z: 69.03966}
   m_LocalScale: {x: 1, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
