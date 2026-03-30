@@ -11,7 +11,8 @@ public class triggerTrapWall : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        trap.activate();
+        //if (!other.CompareTag("Player")) return;
+        trap.Activate();
         
     }
 
