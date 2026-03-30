@@ -1,20 +1,20 @@
 using UnityEngine;
 
-public class triggerTrapWall : MonoBehaviour
+public class checkpoint : MonoBehaviour
 {
-    public trapWallPush trap;
+
+    public BottomReset2 bottom;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
-
     private void OnTriggerEnter(Collider other)
     {
         //if (!other.CompareTag("Player")) return;
-        trap.Activate();
-        
+        bottom.checkpointActivate();
+
     }
 
     // Update is called once per frame
@@ -22,6 +22,4 @@ public class triggerTrapWall : MonoBehaviour
     {
         
     }
-
- 
 }
