@@ -694,6 +694,7 @@ MonoBehaviour:
   snapTurnProvider: {fileID: 1271953080811764128}
   teleportationProvider: {fileID: 4440764254233178252}
   jumpProvider: {fileID: 762773203619469994}
+  gravityProvider: {fileID: 0}
 --- !u!114 &1135076165265362686
 MonoBehaviour:
   m_ObjectHideFlags: 0
