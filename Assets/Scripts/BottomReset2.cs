@@ -5,7 +5,8 @@ public class BottomReset2 : MonoBehaviour
     public Transform XR_Rig;
 
     //public GameObject checkpoint;
-    public bool checkpointReached = false;
+    public bool checkpoint1Reached = false;
+    public bool checkpoint2Reached = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,9 +19,14 @@ public class BottomReset2 : MonoBehaviour
     {
         
     }
-    public void checkpointActivate()
+    public void checkpoint1Activate()
     {
-        checkpointReached = true;
+        checkpoint1Reached = true;
+    }
+
+    public void checkpoint2Activate()
+    {
+        checkpoint2Reached = true;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -32,15 +38,21 @@ public class BottomReset2 : MonoBehaviour
 
     private void reOriginPlayer()
     {
-        if (checkpointReached == false)
+        if (checkpoint1Reached == false)
         {
             XR_Rig.position = new Vector3(0, 0, 0);
             XR_Rig.rotation = Quaternion.Euler(0, 0, 0);
         }
-        else if (checkpointReached == true)
+        else if (checkpoint1Reached == true && checkpoint2Reached == false)
         {
             XR_Rig.position = new Vector3(0, 5, 60);
             XR_Rig.rotation = Quaternion.Euler(0, 0, 0);
         }
+        else if (checkpoint2Reached == true)
+        {
+            XR_Rig.position = new Vector3(-3, 7, 121);
+            XR_Rig.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
     }
 }

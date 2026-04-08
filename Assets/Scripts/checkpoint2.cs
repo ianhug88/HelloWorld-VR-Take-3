@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class checkpoint : MonoBehaviour
+public class checkpoint2 : MonoBehaviour
 {
 
     public BottomReset2 bottom;
@@ -8,18 +8,18 @@ public class checkpoint : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
     private void OnTriggerEnter(Collider other)
     {
         //if (!other.CompareTag("Player")) return;
-        bottom.checkpoint1Activate();
+        bottom.checkpoint2Activate();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
