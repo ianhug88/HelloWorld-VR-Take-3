@@ -8,6 +8,11 @@ public class ScreenFade : MonoBehaviour
 
     private Coroutine currentFade;
 
+    public void Start()
+    {
+        StartFade(0f);
+    }
+
     public void FadeIn() // fade to visible (death)
     {
         StartFade(1f);

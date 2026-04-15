@@ -39,7 +39,7 @@ public class BottomReset2 : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             reOriginPlayer();
-            HandleDeath();
+            StartCoroutine(HandleDeath());
             enableFall.resetPlayer();
         }
     }
