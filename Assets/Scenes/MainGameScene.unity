@@ -6143,6 +6143,17 @@ PrefabInstance:
       addedObject: {fileID: 473665404}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0c2cec6a8730d43ab2531ddb4f51f2, type: 3}
+--- !u!114 &367904285 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2604152015556913459, guid: ae0c2cec6a8730d43ab2531ddb4f51f2, type: 3}
+  m_PrefabInstance: {fileID: 367904284}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f022d984d36e9c4caf142100d29d6f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::enableFall
 --- !u!1001 &374243367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11541,6 +11552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottomReset2
   XR_Rig: {fileID: 1724368844}
+  enableFall: {fileID: 367904285}
   checkpoint1Reached: 0
   checkpoint2Reached: 0
 --- !u!1 &788925927

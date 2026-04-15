@@ -4,6 +4,8 @@ public class BottomReset2 : MonoBehaviour
 {
     public Transform XR_Rig;
 
+    public enableFall enableFall;
+
     //public GameObject checkpoint;
     public bool checkpoint1Reached = false;
     public bool checkpoint2Reached = false;
@@ -32,7 +34,8 @@ public class BottomReset2 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-                reOriginPlayer();  
+                reOriginPlayer();
+            enableFall.resetPlayer();
         }
     }
 

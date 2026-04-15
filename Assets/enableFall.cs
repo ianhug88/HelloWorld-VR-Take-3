@@ -133,7 +133,7 @@ public class enableFall : MonoBehaviour
         if (gravityProvider) gravityProvider.enabled = false;
         /////////////////////
     }
-    private void resetPlayer()
+    public void resetPlayer()
     {
         fallEnabled = false;
 
