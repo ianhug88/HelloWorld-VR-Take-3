@@ -1,10 +1,14 @@
 using UnityEngine;
 
+using System.Collections;
+
 public class BottomReset2 : MonoBehaviour
 {
     public Transform XR_Rig;
 
     public enableFall enableFall;
+
+    public ScreenFade screenFade;
 
     //public GameObject checkpoint;
     public bool checkpoint1Reached = false;
@@ -34,7 +38,8 @@ public class BottomReset2 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-                reOriginPlayer();
+            reOriginPlayer();
+            HandleDeath();
             enableFall.resetPlayer();
         }
     }
@@ -58,4 +63,18 @@ public class BottomReset2 : MonoBehaviour
         }
 
     }
+    IEnumerator HandleDeath()
+    {
+        screenFade.FadeIn();
+
+        yield return new WaitForSeconds(1.2f); // let fade complete
+
+        screenFade.FadeOut();
+    }
+
+
+
+
+
+
 }

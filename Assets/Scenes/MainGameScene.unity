@@ -11568,6 +11568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BottomReset2
   XR_Rig: {fileID: 1724368844}
   enableFall: {fileID: 367904285}
+  screenFade: {fileID: 139805480}
   checkpoint1Reached: 0
   checkpoint2Reached: 0
 --- !u!1 &788925927
