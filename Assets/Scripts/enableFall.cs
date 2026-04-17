@@ -23,6 +23,11 @@ public class enableFall : MonoBehaviour
 
     //public Transform XR_Rig;
 
+    public ScreenFade ScreenFade;
+
+    public float fadeStartY = -10f;
+   // public float deathY = -20f;
+
 
 
     ///////////////////// 
@@ -44,6 +49,18 @@ public class enableFall : MonoBehaviour
     public GravityProvider gravityProvider;
     ///////////////////// 
 
+
+    private void Update()
+    {
+        if (transform.position.y < fadeStartY)
+        {
+            //isFading = true;
+            ScreenFade.FadeIn();
+        }
+
+
+
+    }
 
 
 

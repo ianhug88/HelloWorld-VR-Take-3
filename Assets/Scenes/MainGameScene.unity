@@ -2432,8 +2432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e22b1873ecf0b6499d737313d0af789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  fadeMaterial: {fileID: 2100000, guid: 71c080cc331afeb4cbcdec6c3183cf9e, type: 2}
-  fadeDuration: 1
+  fadeMaterial: {fileID: 2100000, guid: 4f8eaf05385082e4baab680424b88606, type: 2}
+  fadeDuration: 0.5
 --- !u!64 &139805481
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2481,7 +2481,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71c080cc331afeb4cbcdec6c3183cf9e, type: 2}
+  - {fileID: 2100000, guid: 4f8eaf05385082e4baab680424b88606, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6188,6 +6188,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1724368844}
     - target: {fileID: 2604152015556913459, guid: ae0c2cec6a8730d43ab2531ddb4f51f2, type: 3}
+      propertyPath: ScreenFade
+      value: 
+      objectReference: {fileID: 139805480}
+    - target: {fileID: 2604152015556913459, guid: ae0c2cec6a8730d43ab2531ddb4f51f2, type: 3}
+      propertyPath: fadeStartY
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2604152015556913459, guid: ae0c2cec6a8730d43ab2531ddb4f51f2, type: 3}
       propertyPath: gravityProvider
       value: 
       objectReference: {fileID: 1613869531}
@@ -6225,11 +6233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8815190329547443573, guid: ae0c2cec6a8730d43ab2531ddb4f51f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.33
+      value: -2.21
       objectReference: {fileID: 0}
     - target: {fileID: 8815190329547443573, guid: ae0c2cec6a8730d43ab2531ddb4f51f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.471
+      value: 6.74
       objectReference: {fileID: 0}
     - target: {fileID: 8815190329547443573, guid: ae0c2cec6a8730d43ab2531ddb4f51f2, type: 3}
       propertyPath: m_LocalPosition.z

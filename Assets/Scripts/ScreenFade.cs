@@ -4,7 +4,7 @@ using System.Collections;
 public class ScreenFade : MonoBehaviour
 {
     public Material fadeMaterial;
-    public float fadeDuration = 1.0f;
+    public float fadeDuration = 0.5f;
 
     private Coroutine currentFade;
 

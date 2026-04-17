@@ -675,6 +675,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f022d984d36e9c4caf142100d29d6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enableFall
+  ScreenFade: {fileID: 0}
+  fadeStartY: -10
   buttonAction:
     m_UseReference: 1
     m_Action:
