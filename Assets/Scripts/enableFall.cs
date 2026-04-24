@@ -11,7 +11,7 @@ using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Jump;
 //using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 //using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
-
+[RequireComponent(AudioSource)]
 public class enableFall : MonoBehaviour
 {
 
@@ -26,7 +26,9 @@ public class enableFall : MonoBehaviour
     public ScreenFade ScreenFade;
 
     public float fadeStartY = -10f;
-   // public float deathY = -20f;
+    // public float deathY = -20f;
+
+    public AudioSource audioSource;
 
 
 
@@ -49,6 +51,10 @@ public class enableFall : MonoBehaviour
     public GravityProvider gravityProvider;
     ///////////////////// 
 
+    public void Start()
+    {
+        audioSource = audioSource == null ? GetComponent<AudioSource>() : audioSource;
+    }
 
     private void Update()
     {
@@ -117,12 +123,15 @@ public class enableFall : MonoBehaviour
     {
         if (collision.gameObject.tag == "Obstacle")
         {
-            enableRbFall(); 
+            enableRbFall();
+            audioSource.Play();
+
         }
     }
 
     public void enableRbFall()
     {
+
 
         fallEnabled = true;
 
