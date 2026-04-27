@@ -11,7 +11,7 @@ using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Jump;
 //using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 //using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
-[RequireComponent(AudioSource)]
+
 public class enableFall : MonoBehaviour
 {
 
@@ -51,10 +51,7 @@ public class enableFall : MonoBehaviour
     public GravityProvider gravityProvider;
     ///////////////////// 
 
-    public void Start()
-    {
-        audioSource = audioSource == null ? GetComponent<AudioSource>() : audioSource;
-    }
+    
 
     private void Update()
     {
